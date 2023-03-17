@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+    container_name: main-nginx-reverse-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - main-nginx-reverse-proxy:/etc/nginx
+
+volumes:
+  main-nginx-reverse-proxy:
+    driver: local
+    driver_opts:
+      type: none
+      device: /mnt/data/main-nginx-reverse-proxy
+      o: bind
