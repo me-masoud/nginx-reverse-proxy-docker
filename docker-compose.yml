@@ -7,12 +7,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - main-nginx-reverse-proxy:/etc/nginx
-
-volumes:
-  main-nginx-reverse-proxy:
-    driver: local
-    driver_opts:
-      type: none
-      device: /mnt/data/main-nginx-reverse-proxy
-      o: bind
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
